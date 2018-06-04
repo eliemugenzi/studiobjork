@@ -71,17 +71,19 @@ main{
 }
 
 #home{
-
+     width:100vw;
+     display: flex;
     .intro{
         position: relative;
         top:50%;
         left:10%;
-        width:50vw;
+        width:80vw;
         
     }
-    .arrow-area{
-        width:50vw;
+    #more{
+        width:20vw;
     }
+    
 }
 @media(max-width:750px){
     #more{
@@ -107,6 +109,7 @@ main{
     }
 
     .arrow-area{
+        display: inline-block;
         i.arrow.right{
             border: solid black;
             border-width: 0 3px 3px 0;
@@ -177,7 +180,7 @@ main{
 .animated{
     position: absolute;
     height: 100vh;
-    background: lighten(#000,20%);
+    background: lighten(#000,10%);
     top:0;
     right:0;
     animation: slide 2s both ease;
@@ -203,9 +206,9 @@ main#about{
 }
 @keyframes move{
     from{
-        margin-left:-20px;    }
+        margin-left:-80px;    }
     to{
-        margin-left:50%;    }
+        margin-left:30%;    }
 }
 
 @keyframes slide{
