@@ -35,20 +35,24 @@ main {
 main section {
   margin-right: 20px;
 }
-#home {
-  display: flex;
-  justify-content: space-around;
-}
 #home .intro {
-  margin-top: 50%;
-  margin-left: 10%;
+  position: relative;
+  top: 50%;
+  left: 10%;
+  width: 50vw;
+}
+#home .arrow-area {
+  width: 50vw;
 }
 #more {
   display: flex;
   justify-content: space-around;
+  width: 50vw;
+  padding: 20px;
 }
 #more .more-cases {
   padding-top: 50%;
+  padding: 15px;
   background: #ddd;
   margin: 10% 20%;
 }
@@ -73,14 +77,18 @@ main section {
   justify-content: space-around;
 }
 #cases .case {
-  padding: auto 20px;
+  padding: 30px;
   width: 50vw;
   height: 100vh;
+  transition: .5s;
+}
+#cases .case:hover ~ img {
+  border: 5px dashed white;
 }
 #cases .case img {
   position: relative;
   width: 70%;
-  top: 10%;
+  top: 50%;
   height: 50%;
   left: 10%;
   transition: .5s;
@@ -88,11 +96,50 @@ main section {
 #cases .case img:hover {
   border: 5px dashed white;
 }
+#cases .case.light h1 {
+  color: #000;
+}
+#cases .case.light p {
+  color: #000;
+}
+#cases .case.dark h1 {
+  color: #fff;
+}
+#cases .case.dark p {
+  color: #fff;
+}
 .dark {
   background: #333333;
 }
 .light {
   background: #cccccc;
+}
+.animated {
+  position: absolute;
+  height: 100vh;
+  background: #333333;
+  top: 0;
+  right: 0;
+  animation: slide 2s both ease;
+}
+main#about {
+  display: flex;
+}
+main#about .dark {
+  padding: 20px;
+}
+main#about .dark p {
+  position: relative;
+  top: 65%;
+  color: #fff;
+}
+main#about .light {
+  padding: 20px;
+}
+main#about .light .about-desc {
+  position: relative;
+  top: 65%;
+  color: #000;
 }
 @keyframes move {
   from {
@@ -102,16 +149,32 @@ main section {
     margin-left: 50%;
   }
 }
-/* 
-
-.draw:hover::before {
-  border-top-color: #60daaa;
-  border-right-color: #60daaa;
-  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+@keyframes slide {
+  0% {
+    width: 100%;
+  }
+  20% {
+    width: 80%;
+  }
+  50% {
+    width: 60%;
+  }
+  70% {
+    width: 50%;
+  }
+  80% {
+    width: 30%;
+  }
+  85% {
+    width: 20%;
+  }
+  90% {
+    width: 15%;
+  }
+  95% {
+    width: 10%;
+  }
+  100% {
+    width: 0;
+  }
 }
-.draw:hover::after {
-  border-bottom-color: #60daaa;
-  border-left-color: #60daaa;
-  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
-}
-*/

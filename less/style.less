@@ -46,21 +46,27 @@ main{
 }
 
 #home{
-    display: flex;
-    justify-content: space-around;
+
     .intro{
-        //position: absolute;
-        margin-top:50%;
-        margin-left:10%;
+        position: relative;
+        top:50%;
+        left:10%;
+        width:50vw;
         
+    }
+    .arrow-area{
+        width:50vw;
     }
 }
 
 #more{
     display: flex;
     justify-content: space-around;
+    width:50vw;
+    padding:20px;
     .more-cases{
         padding-top:50%;
+        padding:15px;
         background: #ddd;
         margin:10% 20%;
         h2{
@@ -90,14 +96,18 @@ main{
     justify-content:space-around;
     .case{
     
-        padding:auto 20px;
+        padding:30px;
         width:50vw;
         height:100vh;
+        transition: .5s;
+        &:hover ~ img{
+            border:5px dashed white;
+        }
         
         img{
             position: relative;
             width:70%;
-            top:10%;
+            top:50%;
             height:50%;
             left:10%;
             transition:.5s;
@@ -106,7 +116,24 @@ main{
             }
         }
     }
+
+    .case.light{
+        h1{
+            color:#000;
+        }
+        p{
+            color:#000;
+        }
+    }
     
+    .case.dark{
+        h1{
+            color:#fff;
+        }
+        p{
+            color:#fff;
+        }
+    }
 }
 .dark{
     background:lighten(#000,20%);
@@ -115,6 +142,34 @@ main{
 .light{
     background: darken(#fff,20%);
 }
+
+.animated{
+    position: absolute;
+    height: 100vh;
+    background: lighten(#000,20%);
+    top:0;
+    right:0;
+    animation: slide 2s both ease;
+}
+main#about{
+    display: flex;
+    .dark{
+        padding:20px;
+        p{
+            position: relative;
+            top:65%;
+            color:#fff;
+        }
+    }
+    .light{
+        padding:20px;
+        .about-desc{
+            position: relative;
+            top:65%;
+            color:#000;
+        }
+    }
+}
 @keyframes move{
     from{
         margin-left:-20px;    }
@@ -122,17 +177,33 @@ main{
         margin-left:50%;    }
 }
 
+@keyframes slide{
+    0%{
+       width:100%;
 
-/* 
-
-.draw:hover::before {
-  border-top-color: #60daaa;
-  border-right-color: #60daaa;
-  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    }
+    20%{
+        width:80%;
+    }
+    50%{
+        width:60%;
+    }
+    70%{
+        width:50%;
+    }
+    80%{
+        width:30%;
+    }
+    85%{
+      width:20%;
+    }
+    90%{
+      width:15%;
+    }
+    95%{
+      width:10%;
+    }
+    100%{
+        width:0;
+    }
 }
-.draw:hover::after {
-  border-bottom-color: #60daaa;
-  border-left-color: #60daaa;
-  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
-}
-*/
