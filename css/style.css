@@ -1,8 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Peddana', serif;
   overflow-y: hidden;
+  font-weight: 300;
+  font-size: 25px;
+}
+@media (max-width: 750px) {
+  body {
+    overflow-y: hidden;
+  }
 }
 .animated-home {
   position: absolute;
@@ -10,8 +17,8 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  display: none;
   background: #000;
-  animation: autoSwipe 5s both ease;
 }
 .animated-home .loading {
   position: relative;
@@ -66,6 +73,7 @@ main section {
 @media (max-width: 750px) {
   #home .intro {
     width: 100vw;
+    padding: 30px;
   }
   #home #more {
     display: none;
@@ -94,6 +102,7 @@ main section {
 }
 #more .more-cases h2 {
   transform: rotate(-90deg);
+  margin-top: 80%;
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 100;
@@ -147,6 +156,11 @@ main section {
   border: 5px solid white;
   transform: scale(0.9);
 }
+#cases .case .case-title {
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #eee;
+}
 #cases .case.light h1 {
   color: #000;
 }
@@ -168,10 +182,18 @@ main section {
 .animated {
   position: absolute;
   height: 100vh;
-  background: #1a1a1a;
   top: 0;
-  right: 0;
-  animation: slide 2s both ease;
+  left: 0;
+  display: flex;
+}
+.animated .animated-right {
+  position: relative;
+  height: 100vh;
+  background: #000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  animation: slideBack 2s both ease;
 }
 main#about {
   display: flex;
@@ -231,26 +253,19 @@ main#about .light .about-desc {
 }
 @keyframes autoSwipe {
   0% {
-    width: 100vw;
+    margin-left: auto;
   }
-  10% {
-    width: 70vw;
+  25% {
+    margin-left: 25%;
   }
   50% {
-    width: 40vw;
+    margin-left: 50%;
   }
-  70% {
-    width: 30vw;
-  }
-  80% {
-    width: 25vw;
-  }
-  90% {
-    width: 10vw;
+  75% {
+    margin-left: 75%;
   }
   100% {
-    width: 0;
-    display: none;
+    margin-left: 100%;
   }
 }
 @keyframes load {
@@ -271,5 +286,30 @@ main#about .light .about-desc {
   }
   100% {
     transform: translateX(60px);
+  }
+}
+@keyframes slideBack {
+  0% {
+    margin-right: 100%;
+  }
+  25% {
+    margin-right: 85%;
+  }
+  40% {
+    margin-right: 75%;
+  }
+  50% {
+    margin-right: 50%;
+  }
+  65% {
+    margin-right: 35%;
+  }
+  75% {
+    opacity: .5;
+    margin-right: 10%;
+  }
+  100% {
+    opacity: 0;
+    display: none;
   }
 }
