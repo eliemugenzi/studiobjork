@@ -63,6 +63,14 @@ main section {
   width: 100vw;
   display: flex;
 }
+@media (max-width: 750px) {
+  #home .intro {
+    width: 100vw;
+  }
+  #home #more {
+    display: none;
+  }
+}
 #home .intro {
   position: relative;
   top: 50%;
@@ -71,11 +79,6 @@ main section {
 }
 #home #more {
   width: 20vw;
-}
-@media (max-width: 750px) {
-  #more {
-    display: none;
-  }
 }
 #more {
   display: flex;
@@ -111,6 +114,16 @@ main section {
 #cases {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 750px) {
+  #cases .case {
+    padding: 10px;
+    width: 100vw;
+  }
+  #cases .case img {
+    height: 30%;
+    width: 90%;
+  }
 }
 #cases .case {
   padding: 30px;

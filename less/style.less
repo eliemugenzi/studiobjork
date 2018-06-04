@@ -73,6 +73,14 @@ main{
 #home{
      width:100vw;
      display: flex;
+     @media(max-width:750px){
+         .intro{
+             width:100vw;
+         }
+         #more{
+             display: none;
+         }
+     }
     .intro{
         position: relative;
         top:50%;
@@ -85,11 +93,7 @@ main{
     }
     
 }
-@media(max-width:750px){
-    #more{
-        display: none;
-    }
-}
+
 #more{
     display: flex;
     justify-content: space-around;
@@ -126,8 +130,17 @@ main{
 #cases{
     display: flex;
     justify-content:space-around;
+    @media(max-width:750px){
+        .case{
+            padding:10px;
+            width:100vw;
+            img{
+                height: 30%;
+                width:90%;
+            }
+        }
+    }
     .case{
-    
         padding:30px;
         width:50vw;
         height:100vh;
