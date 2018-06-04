@@ -7,6 +7,26 @@ body{
     font-family:@font-family;
     overflow-y: hidden;
 }
+.animated-home{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background: #000;
+    animation:autoSwipe 5s both ease;
+
+    .loading{
+        position: relative;
+        top:50%;
+        left:40%;
+        height:3px;
+        width:50px;
+        background:#fff;
+        animation:load 5s both infinite;
+        animation-iteration-count: 3;
+    }
+}
 
 nav{
     display:flex;
@@ -18,7 +38,12 @@ nav{
     .brand{
         
     }
-
+    
+    @media (max-width:750px) {
+        .menu{
+            display: none;
+        }
+    }
     .menu{
         transform: translateX(-200px);
         ul{
@@ -58,7 +83,11 @@ main{
         width:50vw;
     }
 }
-
+@media(max-width:750px){
+    #more{
+        display: none;
+    }
+}
 #more{
     display: flex;
     justify-content: space-around;
@@ -101,7 +130,8 @@ main{
         height:100vh;
         transition: .5s;
         &:hover ~ img{
-            border:5px dashed white;
+            border:5px solid white;
+            transform:scale(.9);
         }
         
         img{
@@ -112,7 +142,8 @@ main{
             left:10%;
             transition:.5s;
             &:hover{
-                border: 5px dashed white;
+                border: 5px solid white;
+                transform:scale(.9);
             }
         }
     }
@@ -205,5 +236,51 @@ main#about{
     }
     100%{
         width:0;
+    }
+}
+
+@keyframes autoSwipe{
+    0%{
+       width:100vw;
+    }
+    10%{
+        width:70vw;
+    }
+    50%{
+        width:40vw;
+    }
+    70%{
+        width:30vw;
+    }
+    80%{
+        width:25vw;
+    }
+    90%{
+        width:10vw;
+    }
+    100%{
+        width:0;
+        display: none;
+    }
+}
+
+@keyframes load{
+    0%{
+      transform:translateX(10px);
+    }
+    20%{
+        transform:translateX(20px);
+    }
+    50%{
+        transform:translateX(25px);
+    }
+    70%{
+        transform:translateX(30px);
+    }
+    90%{
+        transform:translateX(50px);
+    }
+    100%{
+        transform:translateX(60px);
     }
 }
