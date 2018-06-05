@@ -195,6 +195,15 @@ main section {
   width: 100vw;
   animation: slideBack 2s both ease;
 }
+.transition {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  background: #d6d6d6;
+  transform: skewX(-5deg) translateX(-50px);
+  transition: 2s all ease-in-out;
+  -webkit-transition: 2s all ease-in-out;
+}
 main#about {
   display: flex;
 }
@@ -213,6 +222,39 @@ main#about .light .about-desc {
   position: relative;
   top: 65%;
   color: #000;
+}
+.anim-trans {
+  animation: anim 4s both ease-in-out;
+}
+@keyframes anim {
+  20% {
+    z-index: 11;
+    transform: skewX(5deg) translateX(-100%);
+  }
+  40% {
+    transform: skewX(0deg) translateX(0);
+    width: 100%;
+    z-index: 11;
+    box-shadow: 10px 10px 5px #eaeaea;
+  }
+  60% {
+    transform: skewX(3deg) translateX(0);
+    width: 100%;
+    z-index: 11;
+    box-shadow: 10px 10px 5px #eaeaea;
+  }
+  80% {
+    transform: skewX(1deg) translateX(-100%);
+    width: 60%;
+    z-index: 11;
+    box-shadow: 10px 10px 5px #eaeaea;
+  }
+  100% {
+    transform: skewX(-5deg) translateX(-50px);
+    width: 0%;
+    z-index: 1;
+    box-shadow: none;
+  }
 }
 @keyframes move {
   from {
