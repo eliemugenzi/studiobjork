@@ -2,9 +2,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Peddana', serif;
-  overflow-y: hidden;
+  overflow-y: hidden !important;
   font-weight: 300;
   font-size: 25px;
+  width: 100vw;
+  height: 100vh;
 }
 @media (max-width: 750px) {
   body {
@@ -95,6 +97,12 @@ nav#nav-desktop {
   position: fixed;
   width: 100%;
   z-index: 20;
+  padding: 30px;
+}
+@media (maax-width: 750px) {
+  nav#nav-desktop .brand {
+    display: none;
+  }
 }
 @media (max-width: 750px) {
   nav#nav-desktop .menu {
@@ -153,6 +161,11 @@ main section {
   #home .intro {
     width: 100vw;
     padding: 30px;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    margin-right: 30px;
+    margin-left: -70%;
   }
   #home #more {
     display: none;
@@ -293,6 +306,30 @@ main#about .dark p {
   position: relative;
   top: 65%;
   color: #fff;
+}
+@media (max-width: 750px) {
+  main#about .dark {
+    width: 100vw;
+  }
+  main#about .dark p {
+    top: 30%;
+    line-height: 1.5rem;
+  }
+  main#about .light {
+    width: 100vw;
+  }
+  main#about .light h1 {
+    transform: translateY(-50%);
+    line-height: 1.3rem;
+    display: inline-block;
+  }
+  main#about .light p {
+    display: inline-block;
+    margin-top: 50px;
+    top: 10%;
+    line-height: 1.5rem;
+    transform: translateY(-30%);
+  }
 }
 main#about .light {
   padding: 20px;
