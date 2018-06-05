@@ -3,11 +3,12 @@ $(document).ready(()=>{
     $('.transition').addClass('anim-trans');
     $('.menu-mobile menu').hide();
 
-    $('i.fa.fa-bars').click(()=>{
+    $('#nav-mobile i.fa.fa-bars').click(()=>{
+        console.log("Sth happens")
         $('.menu-sm').slideDown();
     })
     $('i.fa.fa-times-circle').click(()=>{
-        $('.menu-sm').fadeOut();
+        $('.menu-sm').slideUp();
         console.log('clicked');
     })
 })
