@@ -22,16 +22,6 @@ body {
   display: none;
   background: #000;
 }
-.animated-home .loading {
-  position: relative;
-  top: 50%;
-  left: 40%;
-  height: 3px;
-  width: 50px;
-  background: #fff;
-  animation: load 5s both infinite;
-  animation-iteration-count: 3;
-}
 @media (max-width: 750px) {
   nav#nav-desktop {
     display: none;
@@ -51,6 +41,21 @@ body {
   display: none;
   background: #000;
   width: 100%;
+}
+.menu-sm button {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border: 2px solid #fff;
+  padding: 20px;
+}
+.menu-sm button i.fa {
+  color: white;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
 }
 .menu-sm ul {
   list-style: none;
@@ -212,7 +217,7 @@ main section {
 }
 @media (max-width: 750px) {
   #cases {
-    transform: translateY(-15%);
+    transform: translateY(-25%);
   }
   #cases .case {
     height: 80vh;
