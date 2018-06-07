@@ -190,6 +190,8 @@ main{
         top:50%;
         left:10%;
         width:80vw;
+        animation:slideUp 2s both ease;
+        animation-delay: 5s;
         h2{
             font-weight:100;
             font-size:29px;
@@ -248,6 +250,8 @@ main{
         .case{
             height:80vh;
             width:100vw;
+            position:relative;
+            padding:0;
             img{
                 position:relative;
                 width:100%;
@@ -333,11 +337,18 @@ main{
 .transition{
     position:absolute;
     height:100%;
-    width:30%;
+    display: flex;
     background:lighten(#000,9%);
-    transform: skewX(-5deg) translateX(-50px);
+    transform: skewX(3deg) translateX(0);
+    width:100%;
+    z-index:11;
+    box-shadow: 10px 10px 5px #eaeaea;
     transition:2s all ease-in-out;
     -webkit-transition:2s all ease-in-out;
+    .welcome-text{
+        margin:auto;
+        color:#fff;
+    }
 }
 main#about{
     display: flex;
@@ -530,5 +541,16 @@ main#about{
     100%{
         opacity: 0;
         display: none;
+    }
+}
+
+@keyframes slideUp{
+    from{
+        top:60%;
+        opacity:0;
+    }
+    to{
+        top:50%;
+        opacity:1;
     }
 }
