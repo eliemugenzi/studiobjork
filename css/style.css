@@ -304,8 +304,8 @@ main section {
   position: absolute;
   height: 100%;
   display: flex;
-  background: #171717;
-  transform: skewX(3deg) translateX(0);
+  background: #000;
+  transform: translateX(0);
   width: 100%;
   z-index: 11;
   box-shadow: 10px 10px 5px #eaeaea;
@@ -315,6 +315,7 @@ main section {
 .transition .welcome-text {
   margin: auto;
   color: #fff;
+  animation: simplyFade 4s both ease;
 }
 main#about {
   display: flex;
@@ -365,40 +366,44 @@ main#about .light .about-desc {
 }
 @keyframes anim {
   0% {
-    transform: skewX(3deg) translateX(0);
+    transform: translateX(0);
     width: 100%;
     z-index: 11;
     box-shadow: 10px 10px 5px #eaeaea;
   }
   20% {
-    transform: skewX(3deg) translateX(0);
+    transform: translateX(0);
     width: 100%;
     z-index: 11;
     box-shadow: 10px 10px 5px #eaeaea;
   }
   40% {
-    transform: skewX(0deg) translateX(0);
+    transform: translateX(0);
     width: 100%;
     z-index: 11;
     box-shadow: 10px 10px 5px #eaeaea;
   }
   60% {
-    transform: skewX(3deg) translateX(0);
+    transform: translateX(0);
     width: 100%;
     z-index: 11;
     box-shadow: 10px 10px 5px #eaeaea;
   }
   80% {
-    transform: skewX(1deg) translateX(-100%);
+    transform: translateX(-100%);
     width: 60%;
     z-index: 11;
     box-shadow: 10px 10px 5px #eaeaea;
   }
   100% {
-    transform: skewX(-5deg) translateX(-50px);
+    transform: translateX(-50px);
     width: 0%;
     z-index: 1;
     box-shadow: none;
+  }
+}
+@keyframes simplyFade {
+  to {
     opacity: 0;
   }
 }
