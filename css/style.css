@@ -41,6 +41,7 @@ body {
   display: none;
   background: #000;
   width: 100%;
+  z-index: 9999;
 }
 .menu-sm button {
   width: 40px;
@@ -225,7 +226,7 @@ main section {
   }
   #cases .case {
     height: 80vh;
-    width: 100vw;
+    width: 100vw !important;
     position: relative;
     padding: 0;
   }
@@ -278,7 +279,7 @@ main section {
   color: #fff;
 }
 .dark {
-  background: #333333;
+  background: #000;
 }
 .light {
   background: #cccccc;
@@ -317,6 +318,7 @@ main section {
 }
 main#about {
   display: flex;
+  z-index: -2;
 }
 main#about .dark {
   padding: 20px;
@@ -328,14 +330,14 @@ main#about .dark p {
 }
 @media (max-width: 750px) {
   main#about .dark {
-    width: 100vw;
+    width: 100vw !important;
   }
   main#about .dark p {
     top: 30%;
     line-height: 1.5rem;
   }
   main#about .light {
-    width: 100vw;
+    width: 100vw !important;
   }
   main#about .light h1 {
     transform: translateY(-50%);

@@ -48,6 +48,7 @@ body{
     display: none;
     background:#000;
     width:100%;
+    z-index:9999;
 
     button{
         width:40px;
@@ -251,7 +252,7 @@ main{
         transform:translateY(-25%);
         .case{
             height:80vh;
-            width:100vw;
+            width:100vw !important;
             position:relative;
             padding:0;
             img{
@@ -312,7 +313,7 @@ main{
     }
 }
 .dark{
-    background:lighten(#000,20%);
+    background:#000;
 }
 
 .light{
@@ -354,6 +355,7 @@ main{
 }
 main#about{
     display: flex;
+    z-index:-2;
     .dark{
         padding:20px;
         p{
@@ -364,14 +366,14 @@ main#about{
     }
     @media(max-width:750px){
         .dark{
-            width:100vw;
+            width:100vw !important;
             p{
                top:30%;
                line-height:1.5rem;
             }
         }
         .light{
-            width:100vw;
+            width:100vw !important;
             h1{
                 transform: translateY(-50%);
                 line-height:1.3rem;
