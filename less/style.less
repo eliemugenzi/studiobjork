@@ -202,6 +202,7 @@ main{
     @media(max-width:750px){
         .intro{
             left:70%;
+            animation:slideUpMobile 2s both ease;
         }
     }
     #more{
@@ -469,6 +470,17 @@ main#about{
     }
 }
 
+
+@keyframes slideUpMobile{
+    from{
+        top:60%;
+        opacity:0;
+    }
+    to{
+        top:30%;
+        opacity:1;
+    }
+}
 @keyframes fadeLeft{
     from{
         transform:translateX(50px);

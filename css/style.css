@@ -180,6 +180,7 @@ main section {
 @media (max-width: 750px) {
   #home .intro {
     left: 70%;
+    animation: slideUpMobile 2s both ease;
   }
 }
 #home #more {
@@ -422,6 +423,16 @@ main#about .light .about-desc {
   }
   to {
     top: 50%;
+    opacity: 1;
+  }
+}
+@keyframes slideUpMobile {
+  from {
+    top: 60%;
+    opacity: 0;
+  }
+  to {
+    top: 30%;
     opacity: 1;
   }
 }
