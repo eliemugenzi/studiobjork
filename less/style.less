@@ -355,19 +355,28 @@ main{
     }
 }
 main#about{
+    animation:simplyFade 3s both ease;
+    animation-delay:5s;
     display: flex;
     z-index:-2;
+    width:200vw;
     .dark{
         padding:20px;
+        h1{
+            transform:translateY(30%);
+        }
         p{
             position: relative;
-            top:65%;
+            top:25%;
             color:#fff;
         }
     }
     @media(max-width:750px){
         .dark{
             width:100vw !important;
+            h1{
+                color:#fff;
+            }
             p{
                top:30%;
                line-height:1.5rem;
@@ -375,6 +384,7 @@ main#about{
         }
         .light{
             width:100vw !important;
+            color:#000;
             h1{
                 transform: translateY(-50%);
                 line-height:1.3rem;
@@ -393,16 +403,107 @@ main#about{
         padding:20px;
         .about-desc{
             position: relative;
-            top:65%;
+            top:25%;
             color:#000;
         }
     }
 }
 
+@media(max-width:750px){
+    main#about{
+        width:400vw;
+        .light{
+
+        }
+    }
+}
 .anim-trans {
     animation: anim 4s both ease-in-out;
     }
   
+
+.loader{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    //background: #0c1025;
+    width:150px;
+    height:150px;
+    span{
+        position: absolute;
+        width:50px;
+        height:50px;
+        background:#fff;
+        border-radius: 4px;
+        animation:load 2s linear infinite;
+        &:nth-child(1){
+            animation-delay: 0s;
+        }
+        &:nth-child(2){
+            animation-delay:-0.667s;
+        }
+        &:nth-child(3){
+            animation-delay:-1.33s;
+        }
+    }
+}
+
+main#contact{
+    animation:simplyFade 3s both ease;
+    animation-delay:5s;
+    @media(max-width:750px){
+        .contact-area{
+            top:5%;
+            left:0;
+            width:100%;
+            margin:auto 5%;
+            transform:translate(-30%,-30%);
+        }
+    }
+    @media(max-width:1023px){
+        .contact-area{
+            transform:translate(-25%,-30%);
+            margin:auto 10%;
+        }
+    }
+    .contact-area{
+        padding:20px;
+        position:relative;
+        top:20%;
+        left:20%;
+        form{
+            .input-grp{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                input{
+                    height:30px;
+                    width:40%;
+                    border:1px solid #111216;
+                    border-radius:5px;
+                    padding:10px;
+                    &:nth-child(2){
+                        transform:translateX(20px);
+                    }
+                }
+            }
+            textarea{
+                position: relative;
+                width:100%;
+                border:1px solid #111216;
+                border-radius:5px;
+                padding:10px;
+            }
+            input[type=submit]{
+                border:1px solid #111216;
+                border-radius:5px;
+                padding: 20px 30px;
+                background:transparent;
+            }
+        }
+    }
+}
   @keyframes anim{
        0% {
         transform:  translateX(0);
@@ -418,37 +519,82 @@ main#about{
          }
 
        40%   { 
-           transform: translateX(0);
+           transform: translateX(0) scale(.6);
            width:100%;
-            z-index:11; 
+            z-index:11;
+            opacity:.8; 
             box-shadow: 10px 10px 5px #eaeaea;
         }
 
        60%   {
-            transform: translateX(0);
+            transform: translateX(0) scale(.6);
             width:100%;
             z-index:11;
+            opacity:.6;
             box-shadow: 10px 10px 5px #eaeaea;
        }
 
        80%   {
-            transform: translateX(-100%);
-            width:60%;
+            transform: translateX(0%) scale(.4);
+            width:100%;
             z-index:11;
+            opacity:.4;
             box-shadow: 10px 10px 5px #eaeaea;
         }
 
        100%   { 
-           transform: translateX(-50px);
-           width:0%;
+           //width:0%;
            z-index:1;
+           opacity: 0;
            box-shadow: none;
         }
   }
+  
 
+  @keyframes load{
+      0%{
+          top:0;
+          left:0;
+      }
+      12.5%{
+          top:0;
+          left:50%;
+      }
+      25%{
+          top:0;
+          left:50%;
+      }
+      37.5%{
+          top:50%;
+          left:50%;
+      }
+      50%{
+          top:50%;
+          left:50%;
+      }
+      62.5%{
+          top:50%;
+          left:50%;
+      }
+      75%{
+          top:50%;
+          left:0;
+      }
+      87.5%{
+          top:0;
+          left:0;
+      }
+      100%{
+          top:0;
+          left:0;
+      }
+  }
   @keyframes simplyFade{
-      to{
+      from{
           opacity: 0;
+      }
+      to{
+          opacity: 1;
       }
   }
 @keyframes move{
