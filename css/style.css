@@ -335,6 +335,9 @@ main#about .dark p {
   top: 25%;
   color: #fff;
 }
+main#about .dark:nth-child(1) {
+  width: 50%;
+}
 @media (max-width: 750px) {
   main#about .dark {
     width: 100vw !important;
