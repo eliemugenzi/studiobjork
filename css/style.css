@@ -560,7 +560,7 @@ main#contact .contact-area form input[type=submit] {
     opacity: 0;
   }
   to {
-    top: 50%;
+    top: 40%;
     opacity: 1;
   }
 }
