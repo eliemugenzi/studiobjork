@@ -380,7 +380,13 @@ main#about .light .about-desc {
   }
 }
 .anim-trans {
-  animation: anim 4s both ease-in-out;
+  animation: mainTrans 1s both ease-in-out;
+  animation-delay: 4s;
+}
+@keyframes mainTrans {
+  to {
+    opacity: 0;
+  }
 }
 .loader {
   position: absolute;
@@ -477,26 +483,22 @@ main#contact .contact-area form input[type=submit] {
     transform: translateX(0) scale(0.6);
     width: 100%;
     z-index: 11;
-    opacity: .8;
     box-shadow: 10px 10px 5px #eaeaea;
   }
   60% {
     transform: translateX(0) scale(0.6);
     width: 100%;
     z-index: 11;
-    opacity: .6;
     box-shadow: 10px 10px 5px #eaeaea;
   }
   80% {
     transform: translateX(0%) scale(0.4);
     width: 100%;
     z-index: 11;
-    opacity: .4;
     box-shadow: 10px 10px 5px #eaeaea;
   }
   100% {
     z-index: 1;
-    opacity: 0;
     box-shadow: none;
   }
 }
