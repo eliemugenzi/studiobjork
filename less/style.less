@@ -1,10 +1,11 @@
-@font-family:'Peddana', serif;
+@font-family:'Montserrat';
 
+@main-color:#CE7640;
 
 body{
     margin:0;
     padding:0;
-    font-family:@font-family;
+    font-family:@font-family,sans-serif;
     overflow-y: hidden !important;
     font-weight: 300;
     font-size:20px;
@@ -16,27 +17,26 @@ body{
         overflow-y:hidden;
     }
 }
-.animated-home{
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100vw;
-    height:100vh;
-    display: none;
-    background: #000;
-    //animation:autoSwipe 5s both ease;
 
-   
-}
 
-@media(max-width:750px){
-    nav#nav-desktop{
-        display: none;
-        .brand{
-            display: none;
-            h1{
-                display: none;
-            }
+.toggle{
+    display: flex;
+    button{
+        margin:auto;
+        background: transparent;
+        border:none;
+        outline:none;
+        .line{
+            width:40px;
+            height:2px;
+            background: #000;
+            margin-bottom: 8px;
+        }
+        .line.two-third{
+            width:calc(80px/3);
+        }
+        .line.two-third.second{
+            transform:translateX(-8px);
         }
     }
 }
@@ -46,111 +46,69 @@ body{
     height:100%;
     padding:20px;
     display: none;
-    background:#000;
+    background:#fff;
     width:100%;
-    z-index:9999;
+    z-index:99;
 
     button{
         width:40px;
         height:40px;
-        background: #000;
-        border:2px solid #fff;
+        position: relative;
+        left:85%;
+        top:20px;
+        background:transparent;
         padding: 20px;
+        border:none;
+        outline: none;
         i.fa{
-            color:white;
+            color:#000;
             position: relative;
             top:50%;
             left:50%;
             transform:translate(-50%,-50%);
-            font-size:18px;
+            font-size:30px;
+        }
+    }
+    @media(max-width:750px){
+        button{
+            left:75%;
+        }
+    }
+    @media(min-width:751px){
+        ul{
+            margin:auto;
         }
     }
     ul{
         list-style:none;
+        transform:translate(30%,50%);
+        margin-top:10%;
         li{
-            a{
-                text-decoration: none;
-                color:#fff;
-            }
-        }
-    }
-}
-@media(min-width:1024px){
-    nav#nav-desktop{
-        margin:auto 20%;
-    }
-}
-nav#nav-desktop{
-    display:flex;
-    justify-content:space-between;
-    margin:auto 10%;
-    position: fixed;
-    width:100vw;
-    z-index:20;
-    padding:30px;
-    @media(max-width:750px){
-        .brand{
-            display:none;
-        }
-    }
-    .brand{
-        
-    }
-    
-
-    
-    @media (max-width:750px) {
-        .menu{
-            display: none;
-        }
-        
-    }
-    
-    .menu{
-        transform: translateX(-200px);
-        ul{
-            list-style:none;
-            display: flex;
-            justify-content: space-around;
-            li{
-                padding-right:20px;
+            &:hover{
                 a{
-                    text-decoration: none;
-                    color:#000;
-                    text-transform: uppercase;
+                    color:#CE7640;
                 }
             }
+
+            margin-bottom: 30px;
+            a{
+                text-decoration: none;
+                color:#000;
+            }
         }
     }
 }
 
-@media(min-width:751px){
-    nav#nav-mobile{
-        display: none;
-        .brand{
-            display: none;
-        }
-        button{
-            display:none;
-        }
-    }
-}
-nav#nav-mobile{
+nav{
     margin:auto 10%;
     display:flex;
     padding:auto 10%;
+    z-index:5;
     justify-content:space-between;
     .brand{
 
     }
-    button{
-        border:2px solid black;
-        outline:none;
-        background: white;
-        width:40px;
-        height:40px;
-        transform: translateY(40px);
-    }
+    
 }
 main{
     position:relative;
@@ -313,11 +271,11 @@ main{
     }
 }
 .dark{
-    background:#000;
+    background:@main-color;
 }
 
 .light{
-    background: darken(#fff,20%);
+    background: #fff;
 }
 
 .animated{
@@ -427,6 +385,7 @@ main#about{
 @keyframes mainTrans{
     to{
         opacity:0;
+        z-index:-100;
     }
 }
 
@@ -627,5 +586,14 @@ main#contact{
     to{
         transform: translateX(0);
         opacity:1;
+    }
+}
+
+@keyframes resize{
+    from{
+        width:30%;
+    }
+    to{
+        width:50%;
     }
 }
