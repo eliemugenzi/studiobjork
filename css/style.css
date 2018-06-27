@@ -102,6 +102,10 @@ nav {
   z-index: 5;
   justify-content: space-between;
 }
+nav .brand h1 a {
+  text-decoration: none;
+  color: #000;
+}
 main {
   position: relative;
   height: 100vh;
