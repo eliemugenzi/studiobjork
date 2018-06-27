@@ -27,7 +27,15 @@ $(document).ready(()=>{
     $('.service-carousel').slick({
         dots:true,
         autoplay:true,
-        autoplaySpeed:2000
+        autoplaySpeed:2000,
+        responsive:[
+            {
+                breakpoint:750,
+                settings:{
+                    dots:false
+                }
+            }
+        ]
     })
 
    
