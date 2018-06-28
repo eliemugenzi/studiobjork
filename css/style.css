@@ -451,7 +451,7 @@ main#case {
   position: absolute;
   width: 100vw;
   height: 80%;
-  top: 10%;
+  top: 15%;
   left: 0;
   display: flex;
 }
@@ -459,6 +459,7 @@ main#case .dark {
   background: #000;
   display: flex;
   width: 50vw;
+  padding: 20px;
 }
 main#case .dark p {
   margin: auto;
@@ -484,6 +485,7 @@ main#case .dark-desc .desc-info {
   width: 100%;
   display: flex;
   background: #fff;
+  padding: 20px;
 }
 main#case .dark-desc .desc-info p {
   margin: auto;
@@ -494,7 +496,13 @@ main#case .dark-desc .desc-info p {
   z-index: 20;
 }
 .show-section {
-  animation: showSection 4s both ease-in-out;
+  animation: showSection 2s both ease-in-out;
+}
+.show-section .product-desc p {
+  animation: simplyFade 4s 2s both ease;
+}
+.show-section .product-desc img {
+  animation: zoomUp 5s 2s both ease;
 }
 .show-section .desc-info {
   animation: simplyFade 4s 2s both ease;
@@ -525,16 +533,34 @@ main#case .dark-desc .desc-info p {
     box-shadow: none;
   }
 }
+@keyframes zoomUp {
+  from {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 #product {
   position: absolute;
   width: 0;
   height: 80vh;
-  top: 10%;
+  top: 15%;
   left: 0;
   transition: all 2s ease-in-out;
   display: flex;
-  flex-direction: row;
   background: #fff;
+}
+@media (max-width: 750px) {
+  #product {
+    display: block;
+  }
+  #product .product-desc,
+  #product .product-info {
+    width: 100%;
+  }
 }
 #product .product-desc {
   flex-basis: 50vw;
@@ -554,6 +580,12 @@ main#case .dark-desc .desc-info p {
   width: 150px;
   height: 180px;
 }
+@media (max-width: 750px) {
+  #product .product-desc .product-grid img {
+    width: 100px;
+    height: 120px;
+  }
+}
 #product .product-info {
   flex-basis: 50vw;
   position: relative;
@@ -565,7 +597,7 @@ main#case-detail {
   position: absolute;
   width: 0;
   height: 80vh;
-  top: 10%;
+  top: 15%;
   left: 0;
   background: url(https://images.pexels.com/photos/1113188/pexels-photo-1113188.jpeg?auto=compress&cs=tinysrgb&h=350) no-repeat;
   background-size: cover;

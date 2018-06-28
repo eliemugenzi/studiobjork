@@ -15,11 +15,11 @@ $(document).ready(()=>{
     $('main#case .btn-more').click(()=>{
         
         $('main#case-detail').show().addClass('show-section');
-        $('main#case,#product').fadeIn();
+        $('main#case').fadeIn();
     })
 
     $('#btn-products').click(()=>{
-        
+        $('#product').fadeIn();
         $('#product').show().addClass('show-section');
         $('main#case-detail,main#case').fadeIn();
     })

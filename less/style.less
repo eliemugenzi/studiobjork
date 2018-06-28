@@ -493,13 +493,14 @@ main#case{
     position: absolute;
     width:100vw;
     height:80%;
-    top:10%;
+    top:15%;
     left:0;
     display:flex;
     .dark{
         background:#000;
         display: flex;
         width:50vw;
+        padding:20px;
         p{
             margin:auto;
             color:#fff;
@@ -525,6 +526,7 @@ main#case{
             width:100%;
             display: flex;
             background:#fff;
+            padding:20px;
             p{
                 margin:auto;
                 color:@main-color;
@@ -540,7 +542,15 @@ main#case{
 
 
 .show-section{
-    animation:showSection 4s both ease-in-out;
+    animation:showSection 2s both ease-in-out;
+    .product-desc{
+        p{
+            animation: simplyFade 4s 2s both ease;
+        }
+        img{
+            animation:zoomUp 5s 2s both ease;
+        }
+    }
     .desc-info{
         animation:simplyFade 4s 2s both ease;
     }
@@ -568,16 +578,33 @@ main#case{
           width:100%;z-index:11; box-shadow: none;}
 }
 
+@keyframes zoomUp{
+    from{
+        transform: translateY(25px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 #product{
     position:absolute;
     width:0;
     height:80vh;
-    top:10%;
+    top:15%;
     left:0;
     transition: all 2s ease-in-out;
     display: flex;
-    flex-direction: row;
     background: #fff;
+
+    @media(max-width:750px){
+        display:block;
+        .product-desc,.product-info{
+            width:100%;
+        }
+    }
     .product-desc{
         flex-basis: 50vw;
         padding:30px;
@@ -595,6 +622,13 @@ main#case{
                 width:150px;
                 height:180px;
             }
+            @media(max-width:750px){
+                img{
+                    width:100px;
+                    height:120px;
+                }
+                
+            }
         }
 
     }
@@ -611,7 +645,7 @@ main#case-detail{
     position:absolute;
     width:0;
     height:80vh;
-    top:10%;
+    top:15%;
     left:0;
     background:url(https://images.pexels.com/photos/1113188/pexels-photo-1113188.jpeg?auto=compress&cs=tinysrgb&h=350) no-repeat;
     background-size:cover;
