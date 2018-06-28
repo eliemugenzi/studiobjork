@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: 'Varela Round', sans-serif;
   font-weight: 300;
   font-size: 20px;
   width: 100vw;
@@ -447,6 +447,22 @@ main#contact .contact-area form input[type=submit] {
   padding: 20px 30px;
   background: transparent;
 }
+.prev,
+.next {
+  width: 55px;
+  height: 55px;
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  outline: none;
+  display: flex;
+}
+.prev i.fa,
+.next i.fa {
+  margin: auto;
+  font-size: 22px;
+  color: #fff;
+}
 main#case {
   position: absolute;
   width: 100vw;
@@ -496,7 +512,10 @@ main#case .dark-desc .desc-info p {
   z-index: 20;
 }
 .show-section {
-  animation: showSection 2s both ease-in-out;
+  animation: showSection 1s both ease-in-out;
+}
+.show-section .product-desc {
+  animation: meetleft 1s both ease;
 }
 .show-section .product-desc p {
   animation: simplyFade 4s 2s both ease;
@@ -505,32 +524,36 @@ main#case .dark-desc .desc-info p {
   animation: zoomUp 5s 2s both ease;
 }
 .show-section .desc-info {
-  animation: simplyFade 4s 2s both ease;
+  animation: simplyFade 4s 2s both ease,meetright 2s 1s both ease;
+}
+@keyframes meetleft {
+  from {
+    margin-right: 50%;
+  }
+  to {
+    margin-right: 0;
+  }
+}
+@keyframes meetright {
+  from {
+    margin-left: 50%;
+  }
+  to {
+    margin-left: 0;
+  }
 }
 @keyframes showSection {
   20% {
     z-index: 11;
-    width: 10%;
+    width: 20%;
   }
-  40% {
-    width: 40%;
+  30% {
     z-index: 11;
-    box-shadow: 10px 10px 5px #eaeaea;
-  }
-  60% {
-    width: 60%;
-    z-index: 11;
-    box-shadow: 10px 10px 5px #eaeaea;
-  }
-  80% {
-    width: 80%;
-    z-index: 11;
-    box-shadow: 10px 10px 5px #eaeaea;
+    width: 25%;
   }
   100% {
     width: 100%;
     z-index: 11;
-    box-shadow: none;
   }
 }
 @keyframes zoomUp {
