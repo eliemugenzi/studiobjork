@@ -319,7 +319,7 @@ main{
     background:#000;
     transform: translateX(0);
     width:100%;
-    z-index:11;
+    .closest;
     box-shadow: 10px 10px 5px #eaeaea;
     transition:2s all ease-in-out;
     -webkit-transition:2s all ease-in-out;
@@ -516,6 +516,7 @@ main#case{
         display: flex;
         width:50vw;
         padding:20px;
+        animation:meetright 4s 1s both ease;
         p{
             margin:auto;
             color:#fff;
@@ -524,6 +525,7 @@ main#case{
     }
     .dark-desc{
         width:50vw;
+        animation:meetleft 4s 1s both ease;
         .desc-bg{
             position: relative;
             width:100%;
@@ -555,11 +557,32 @@ main#case{
     z-index:20;
 }
 
+.show-section-alt{
+    z-index:11;
+    animation:simplyFade 1s both ease-in;
+    .dark{
+        animation:meetright 2s both ease-in;
+    }
+    .dark-desc{
+        animation:meetleft 2s both ease-in;
+    }
+}
 
-.show-section{
-    animation:showSection 1s both ease-in-out;
+.show-section-rev{
+    z-index:11;
     .product-desc{
-        animation: meetleft 1s both ease;
+        animation:meetleft 2s both ease-in;
+    }
+    .desc-info{
+        animation:meetright 2s both ease-out;
+    }
+    
+}
+.show-section{
+    z-index:11;
+    animation:simplyFade 1s both ease-in;
+    .product-desc{
+        
         p{
             animation: simplyFade 4s 2s both ease;
         }
@@ -568,42 +591,33 @@ main#case{
         }
     }
     .desc-info{
-        animation:simplyFade 4s 2s both ease,meetright 2s 1s both ease;
+        animation:simplyFade 4s 2s both ease;
+    }
+}
+@keyframes slideLeftRight{
+    from{
+        width:0;
+    }
+    to{
+        width: 100%;
     }
 }
 
 @keyframes meetleft{
     from{
-        margin-right:50%
+        transform: translateX(50%);
     }
     to{
-        margin-right:0;
+        transform: translateX(0);
     }
 }
 @keyframes meetright{
     from{
-        margin-left:50%;
+        transform: translateX(-50%);
     }
     to{
-        margin-left: 0;
+        transform:translateX(0);
     }
-}
-
-@keyframes showSection{
-    0% { }
-
-    20%  { 
-        
-        z-index:11;
-        width:20%;
-     }
-     30%{
-         z-index:11;
-         width:25%;
-     }
-
-    100%   { 
-          width:100%;z-index:11; }
 }
 
 @keyframes zoomUp{
@@ -619,25 +633,27 @@ main#case{
 
 #product{
     position:absolute;
-    width:0;
+    width:100vw;
     height:80vh;
     top:15%;
     left:0;
     transition: all 2s ease-in-out;
     display: flex;
     background: #fff;
+    
 
-    @media(max-width:750px){
-        display:block;
-        .product-desc,.product-info{
-            width:100%;
-        }
+    .btn-scroll{
+        position: absolute;
+        top:75%;
+        left:40%;
     }
+
     .product-desc{
         flex-basis: 50vw;
         padding:30px;
         background: @main-color;
         color:#fff;
+        animation:meetright 1s both ease;
         p{
             margin-bottom: 20px;
 
@@ -664,26 +680,31 @@ main#case{
         flex-basis:50vw;
         position: relative;
         height: 100%;
-        background: url(http://nootriafrica.com/wp-content/uploads/2018/03/pack2-2-e1520932329368.png) no-repeat;
-        background-size: cover;
+        animation:meetleft 1s both ease;
+        img{
+            position: relative;
+            width:100%;
+            height: 100%;
+        }
         
     }
 }
 main#case-detail{
     position:absolute;
-    width:0;
+    width:100vw;
     height:80vh;
     top:15%;
     left:0;
     background:url(https://images.pexels.com/photos/1113188/pexels-photo-1113188.jpeg?auto=compress&cs=tinysrgb&h=350) no-repeat;
     background-size:cover;
     transition: all 2s ease-in-out;
+    animation: slideLeftRight 2s both ease;
     .case-info{
         position: relative;
         top:60%;
         left:50%;
         opacity: 0;
-        animation:simplyFade 4s 2s both ease;
+        animation:simplyFade 2s both ease;
         p{
             color:#fff;
             margin-bottom:50px;
