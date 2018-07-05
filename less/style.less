@@ -511,12 +511,18 @@ main#case{
     top:15%;
     left:0;
     display:flex;
+
+    .btn-scroll{
+        position:absolute;
+        top:75%;
+        left:40%;
+    }
     .dark{
         background:#000;
         display: flex;
         width:50vw;
         padding:20px;
-        animation:meetright 4s 1s both ease;
+        animation:meetright 5s 1s both ease;
         p{
             margin:auto;
             color:#fff;
@@ -525,7 +531,7 @@ main#case{
     }
     .dark-desc{
         width:50vw;
-        animation:meetleft 4s 1s both ease;
+        animation:meetleft 5s 1s both ease;
         .desc-bg{
             position: relative;
             width:100%;
@@ -559,12 +565,11 @@ main#case{
 
 .show-section-alt{
     z-index:11;
-    animation:simplyFade 1s both ease-in;
     .dark{
-        animation:meetright 2s both ease-in;
+        animation:meetright 1s both ease-in;
     }
     .dark-desc{
-        animation:meetleft 2s both ease-in;
+        animation:meetleft 1s both ease-in;
     }
 }
 
@@ -690,10 +695,9 @@ main#case{
     }
 }
 main#case-detail{
-    position:absolute;
     width:100vw;
     height:80vh;
-    top:15%;
+    top:0%;
     left:0;
     background:url(https://images.pexels.com/photos/1113188/pexels-photo-1113188.jpeg?auto=compress&cs=tinysrgb&h=350) no-repeat;
     background-size:cover;

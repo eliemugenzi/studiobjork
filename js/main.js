@@ -12,12 +12,12 @@ $(document).ready(()=>{
         $('.menu-sm').slideUp();
         console.log('clicked');
     })
-    $('main#case-detail,#product').hide();
-    $('main#case .btn-more').click(()=>{
-        
-        $('main#case-detail').show().addClass('show-section');
-        $('main#case').fadeIn();
-    })
+    $('#product').hide();
+       $('main#case .btn-scroll').click(()=>{
+           $('#product').fadeIn();
+           $('#product').show().addClass('show-section');
+           $('main#case').fadeOut();
+       })
 
     $('#btn-products').click(()=>{
         $('#product').fadeIn();
@@ -27,7 +27,7 @@ $(document).ready(()=>{
     
 
     $('#btn-scroll-back').click(()=>{
-        $('#product,main#case-detail').fadeOut();
+        $('#product').hide();
         $('main#case').show().addClass('show-section-alt');
         
 
@@ -57,30 +57,17 @@ $(document).keydown(e=>{
         case key.down:
             console.log('Down Pressed');
             if($('main#case').hasClass('show-section')|| $('main#case').hasClass('show-section-alt')){
-                $('.show-section').removeClass('show-section');
-                $('main#case-detail').show().addClass('show-section');
+                $('#product').fadeIn().show().addClass('show-section');
                 $('main#case').fadeIn();
             }
-            else if($('main#case-detail').hasClass('show-section')){
-                $('#product').fadeIn();
-                $('#product').show().addClass('show-section');
-                $('main#case-detail,main#case').fadeIn();;
-            }
-            else if($('#product').hasClass('show-section')){
-                $('#product,main#case-detail').fadeOut();
-                $('main#case').show().addClass('show-section-alt');
-            }
+            
             break;
         case key.up:
             if($('#product').hasClass('show-section')){
-                $('#product').addClass('show-section-rev');
-                $('main#case').fadeIn().show().addClass('show-section');
-                $('#product,main#case-detail').fadeOut();
+                $('#product').removeClass('show-section');
+                $('main#case').addClass('show-section show-section-alt');
             }
-            else if($('main#case-detail').hasClass('show-section')){
-                $('main#case').fadeIn().show().addClass('show-section');
-                $('main#case-detail').fadeOut();
-            }
+            
             break;
         default:
             console.log("Nonsense");
