@@ -14,13 +14,12 @@ $(document).ready(()=>{
     })
     $('#product').hide();
        $('main#case .btn-scroll').click(()=>{
-           $('#product').fadeIn();
+           $('#product').show();
            $('#product').show().addClass('show-section');
            $('main#case').fadeOut();
        })
 
     $('#btn-products').click(()=>{
-        $('#product').fadeIn();
         $('#product').show().addClass('show-section');
         $('main#case-detail,main#case').fadeIn();
     })
@@ -57,14 +56,14 @@ $(document).keydown(e=>{
         case key.down:
             console.log('Down Pressed');
             if($('main#case').hasClass('show-section')|| $('main#case').hasClass('show-section-alt')){
-                $('#product').fadeIn().show().addClass('show-section');
-                $('main#case').fadeIn();
+                $('#product').show().addClass('show-section');
+                $('main#case').show();
             }
             
             break;
         case key.up:
             if($('#product').hasClass('show-section')){
-                $('#product').removeClass('show-section');
+                $('#product').removeClass('show-section').hide();
                 $('main#case').addClass('show-section show-section-alt');
             }
             

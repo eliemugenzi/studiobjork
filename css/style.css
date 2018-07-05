@@ -51,29 +51,36 @@ body {
   width: 100%;
   z-index: 99;
 }
-.menu-sm button {
-  width: 40px;
-  height: 40px;
-  position: relative;
-  left: 85%;
-  top: 20px;
+.menu-sm .nav-div {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 10%;
+}
+@media (min-width: 751px) {
+  .menu-sm .nav-div {
+    transform: translateY(10px);
+  }
+}
+.menu-sm .nav-div h1 {
+  font-size: 20px;
+}
+.menu-sm .nav-div h1 a {
+  text-decoration: none;
+  color: #000;
+}
+.menu-sm .nav-div button {
   background: transparent;
   padding: 20px;
   border: none;
   outline: none;
 }
-.menu-sm button i.fa {
+.menu-sm .nav-div button i.fa {
   color: #000;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
-}
-@media (max-width: 750px) {
-  .menu-sm button {
-    left: 75%;
-  }
 }
 @media (min-width: 751px) {
   .menu-sm ul {
