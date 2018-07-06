@@ -488,7 +488,7 @@ main#case .dark {
   display: flex;
   width: 50vw;
   padding: 20px;
-  animation: meetright 5s 1s both ease;
+  animation: meetright 1s both ease;
 }
 main#case .dark p {
   margin: auto;
@@ -497,7 +497,7 @@ main#case .dark p {
 }
 main#case .dark-desc {
   width: 50vw;
-  animation: meetleft 5s 1s both ease;
+  animation: meetleft 1s both ease;
 }
 main#case .dark-desc .desc-bg {
   position: relative;
@@ -525,6 +525,15 @@ main#case .dark-desc .desc-info p {
 .closest {
   z-index: 20;
 }
+.animate-case {
+  z-index: 11;
+}
+.animate-case .dark {
+  animation: meetright 1s both ease-in;
+}
+.animate-case .dark-desc {
+  animation: meetleft 1s both ease;
+}
 .show-section-alt {
   z-index: 11;
 }
@@ -534,18 +543,17 @@ main#case .dark-desc .desc-info p {
 .show-section-alt .dark-desc {
   animation: meetleft 1s both ease-in;
 }
-.show-section-rev {
+.animate-product-rev {
   z-index: 11;
 }
-.show-section-rev .product-desc {
+.animate-product-rev .product-desc {
   animation: meetleft 2s both ease-in;
 }
-.show-section-rev .desc-info {
+.animate-product-rev .desc-info {
   animation: meetright 2s both ease-out;
 }
 .show-section {
   z-index: 11;
-  animation: simplyFade 1s both ease-in;
 }
 .show-section .product-desc p {
   animation: simplyFade 4s 2s both ease;
@@ -610,7 +618,7 @@ main#case .dark-desc .desc-info p {
   padding: 30px;
   background: #CE7640;
   color: #fff;
-  animation: meetright 1s both ease;
+  animation: updown 1s both ease;
 }
 #product .product-desc p {
   margin-bottom: 20px;
@@ -634,12 +642,28 @@ main#case .dark-desc .desc-info p {
   flex-basis: 50vw;
   position: relative;
   height: 100%;
-  animation: meetleft 1s both ease;
+  animation: downup 1s both ease;
 }
 #product .product-info img {
   position: relative;
   width: 100%;
   height: 100%;
+}
+@keyframes updown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes downup {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 main#case-detail {
   width: 100vw;
@@ -707,7 +731,7 @@ main#case-detail .case-info .btn-scroll {
 }
 .btn-more i.fa {
   margin: auto;
-  color: #fff;
+  color: #b71c1c;
   font-size: 22px;
 }
 #services {

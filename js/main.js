@@ -55,16 +55,16 @@ $(document).keydown(e=>{
     switch(e.keyCode){
         case key.down:
             console.log('Down Pressed');
-            if($('main#case').hasClass('show-section')|| $('main#case').hasClass('show-section-alt')){
+            if($('main#case').hasClass('show-section')){
                 $('#product').show().addClass('show-section');
-                $('main#case').show();
+                $('main#case').fadeIn();
             }
             
             break;
         case key.up:
             if($('#product').hasClass('show-section')){
-                $('#product').removeClass('show-section').hide();
-                $('main#case').addClass('show-section show-section-alt');
+                $('#product').hide();
+                $('main#case').show().addClass('show-section-alt');
             }
             
             break;
