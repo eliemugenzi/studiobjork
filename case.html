@@ -9,7 +9,37 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
     <script src="./js/main.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $('main#case').swipe({
+                swipe:(event,direction,distance,duration,fingerCount,fingerData)=>{
+                    switch(direction){
+                        case 'up':
+                            $('#product').show().addClass('show-section');
+                            $('main#case-detail,main#case').fadeIn();
+                            break;
+                        default:
+                            console.log('Damn!!');
+                    }
+                }
+            })
+            $('#product').swipe({
+                swipe:(event,direction,distance,duration,fingerCount,fingerData)=>{
+                    switch(direction){
+                        case 'down':
+                            $('#product').hide();
+                            $('main#case').show().addClass('show-section-alt');
+                            break;
+                        default:
+                            console.log('Damn!!');
+                    }
+                }
+            })
+        })
+        
+    </script>
 
     <style>
         body{
