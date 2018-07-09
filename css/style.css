@@ -478,6 +478,25 @@ main#case {
   left: 0;
   display: flex;
 }
+main#case .btn-round {
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  text-decoration: none;
+  transition: .3s;
+}
+main#case .btn-round:hover {
+  transform: rotate(-90deg);
+}
+main#case .btn-round i {
+  margin: auto;
+  color: #fff;
+}
 main#case .btn-scroll {
   position: absolute;
   top: 75%;
@@ -604,7 +623,6 @@ main#case .dark-desc .desc-info p {
   height: 80vh;
   top: 15%;
   left: 0;
-  transition: all 2s ease-in-out;
   display: flex;
   background: #fff;
 }
@@ -615,6 +633,7 @@ main#case .dark-desc .desc-info p {
 }
 #product .product-desc {
   flex-basis: 50vw;
+  width: 50vw;
   padding: 30px;
   background: #CE7640;
   color: #fff;
@@ -640,6 +659,7 @@ main#case .dark-desc .desc-info p {
 }
 #product .product-info {
   flex-basis: 50vw;
+  width: 50%;
   position: relative;
   height: 100%;
   animation: downup 1s both ease;
@@ -652,9 +672,11 @@ main#case .dark-desc .desc-info p {
 @keyframes updown {
   from {
     transform: translateY(-100%);
+    width: 50%;
   }
   to {
     transform: translateY(0);
+    width: 50vw;
   }
 }
 @keyframes downup {
